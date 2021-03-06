@@ -5,7 +5,7 @@ import pip
 import getpass
 import pymysql
 import urllib.request
-
+import os 
 logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
 
@@ -76,8 +76,10 @@ def setUp():
     cur = databaseSetUp()
     logging.warning('Updating Database')
     updateDatabase(cur)
+    os.system('python main.py')
 
 
     
-if __name__ == '__main__:
+
+if __name__ == "__main__":
     setUp()
